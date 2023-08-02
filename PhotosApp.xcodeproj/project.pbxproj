@@ -19,6 +19,10 @@
 		A2F08F882A7AD26400EEDFE5 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F08F872A7AD26400EEDFE5 /* ImageSelectorController.swift */; };
 		A2F08F8A2A7AD27600EEDFE5 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F08F892A7AD27600EEDFE5 /* NotificationsController.swift */; };
 		A2F08F8C2A7AD28500EEDFE5 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F08F8B2A7AD28500EEDFE5 /* ProfileController.swift */; };
+		A2F08FB02A7B089A00EEDFE5 /* ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F08FAF2A7B089A00EEDFE5 /* ViewCell.swift */; };
+		A2F08FB52A7B0A9A00EEDFE5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F08FB42A7B0A9A00EEDFE5 /* UIViewController.swift */; };
+		A2F08FB72A7B0AF600EEDFE5 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F08FB62A7B0AF600EEDFE5 /* UIButton.swift */; };
+		A2F08FB92A7B0B2C00EEDFE5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F08FB82A7B0B2C00EEDFE5 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		A2F08F872A7AD26400EEDFE5 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
 		A2F08F892A7AD27600EEDFE5 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		A2F08F8B2A7AD28500EEDFE5 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		A2F08FAF2A7B089A00EEDFE5 /* ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCell.swift; sourceTree = "<group>"; };
+		A2F08FB42A7B0A9A00EEDFE5 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		A2F08FB62A7B0AF600EEDFE5 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		A2F08FB82A7B0B2C00EEDFE5 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 		A2F08F7B2A7ACF2C00EEDFE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A2F08FAF2A7B089A00EEDFE5 /* ViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,8 +138,19 @@
 		A2F08F802A7ACFD000EEDFE5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A2F08FB12A7B0A4200EEDFE5 /* Extensions */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A2F08FB12A7B0A4200EEDFE5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2F08FB42A7B0A9A00EEDFE5 /* UIViewController.swift */,
+				A2F08FB62A7B0AF600EEDFE5 /* UIButton.swift */,
+				A2F08FB82A7B0B2C00EEDFE5 /* UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,11 +225,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2F08F6B2A7ACEDB00EEDFE5 /* ViewController.swift in Sources */,
+				A2F08FB72A7B0AF600EEDFE5 /* UIButton.swift in Sources */,
 				A2F08F882A7AD26400EEDFE5 /* ImageSelectorController.swift in Sources */,
+				A2F08FB52A7B0A9A00EEDFE5 /* UIViewController.swift in Sources */,
 				A2F08F862A7AD25100EEDFE5 /* SearchController.swift in Sources */,
 				A2F08F672A7ACEDB00EEDFE5 /* AppDelegate.swift in Sources */,
+				A2F08FB02A7B089A00EEDFE5 /* ViewCell.swift in Sources */,
 				A2F08F842A7AD22600EEDFE5 /* FeedController.swift in Sources */,
 				A2F08F8C2A7AD28500EEDFE5 /* ProfileController.swift in Sources */,
+				A2F08FB92A7B0B2C00EEDFE5 /* UIView.swift in Sources */,
 				A2F08F822A7AD06A00EEDFE5 /* MainTabController.swift in Sources */,
 				A2F08F8A2A7AD27600EEDFE5 /* NotificationsController.swift in Sources */,
 				A2F08F692A7ACEDB00EEDFE5 /* SceneDelegate.swift in Sources */,
@@ -367,6 +391,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,6 +420,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

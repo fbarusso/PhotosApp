@@ -14,14 +14,14 @@ class MainTabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
         configureViewControllers()
     }
     
     // MARK: - Helpers
     
     func configureViewControllers() {
-        let feed = templateNavigationController(unselectedImage: #imageLiteral(resourceName: "home_unselected"), selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: FeedController())
+        let feedCollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let feed = templateNavigationController(unselectedImage: #imageLiteral(resourceName: "home_unselected"), selectedImage: #imageLiteral(resourceName: "home_selected"), rootViewController: FeedController(collectionViewLayout: feedCollectionViewFlowLayout))
         
         let search = templateNavigationController(unselectedImage: #imageLiteral(resourceName: "search_unselected"), selectedImage: #imageLiteral(resourceName: "search_selected"), rootViewController: SearchController())
         
@@ -32,7 +32,6 @@ class MainTabController: UITabBarController {
         let profile = templateNavigationController(unselectedImage: #imageLiteral(resourceName: "profile_unselected"), selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: ProfileController())
         
         viewControllers = [feed, search, imageSelector, notifications, profile]
-        
         tabBar.tintColor = .black
     }
     
