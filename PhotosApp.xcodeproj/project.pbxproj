@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A268E5FD2A7C16EB00837076 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268E5FC2A7C16EB00837076 /* CustomTextField.swift */; };
 		A2C85B0B2A7BDD0000B3BAC2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C85B0A2A7BDD0000B3BAC2 /* LoginController.swift */; };
 		A2C85B0D2A7BDD1000B3BAC2 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C85B0C2A7BDD1000B3BAC2 /* RegistrationController.swift */; };
 		A2F08F672A7ACEDB00EEDFE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F08F662A7ACEDB00EEDFE5 /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A268E5FC2A7C16EB00837076 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A2C85B0A2A7BDD0000B3BAC2 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A2C85B0C2A7BDD1000B3BAC2 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		A2F08F632A7ACEDB00EEDFE5 /* PhotosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 		A2F08F7B2A7ACF2C00EEDFE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A268E5FC2A7C16EB00837076 /* CustomTextField.swift */,
 				A2F08FAF2A7B089A00EEDFE5 /* FeedCell.swift */,
 			);
 			path = View;
@@ -132,12 +135,12 @@
 			isa = PBXGroup;
 			children = (
 				A2C85B092A7BDCDD00B3BAC2 /* Authentication */,
-				A2F08F812A7AD06A00EEDFE5 /* MainTabController.swift */,
 				A2F08F832A7AD22600EEDFE5 /* FeedController.swift */,
-				A2F08F852A7AD25100EEDFE5 /* SearchController.swift */,
 				A2F08F872A7AD26400EEDFE5 /* ImageSelectorController.swift */,
+				A2F08F812A7AD06A00EEDFE5 /* MainTabController.swift */,
 				A2F08F892A7AD27600EEDFE5 /* NotificationsController.swift */,
 				A2F08F8B2A7AD28500EEDFE5 /* ProfileController.swift */,
+				A2F08F852A7AD25100EEDFE5 /* SearchController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				A2F08FB72A7B0AF600EEDFE5 /* UIButton.swift in Sources */,
 				A2F08F882A7AD26400EEDFE5 /* ImageSelectorController.swift in Sources */,
 				A2F08FB52A7B0A9A00EEDFE5 /* UIViewController.swift in Sources */,
+				A268E5FD2A7C16EB00837076 /* CustomTextField.swift in Sources */,
 				A2F08F862A7AD25100EEDFE5 /* SearchController.swift in Sources */,
 				A2F08F672A7ACEDB00EEDFE5 /* AppDelegate.swift in Sources */,
 				A2F08FB02A7B089A00EEDFE5 /* FeedCell.swift in Sources */,
