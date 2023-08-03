@@ -47,8 +47,7 @@ class FeedCell: UICollectionViewCell {
     private lazy var likeButton: UIButton = {
         let button = UIButton(type: .system)
         
-        let image = #imageLiteral(resourceName: "like_unselected")
-        button.setImage(image, for: .normal)
+        button.setImage(#imageLiteral(resourceName: "like_unselected"), for: .normal)
         button.tintColor = .black
         
         return button
@@ -57,8 +56,7 @@ class FeedCell: UICollectionViewCell {
     private lazy var commentButton: UIButton = {
         let button = UIButton(type: .system)
         
-        let image = #imageLiteral(resourceName: "comment")
-        button.setImage(image, for: .normal)
+        button.setImage(#imageLiteral(resourceName: "comment"), for: .normal)
         button.tintColor = .black
         
         return button
@@ -67,8 +65,7 @@ class FeedCell: UICollectionViewCell {
     private lazy var shareButton: UIButton = {
         let button = UIButton(type: .system)
         
-        let image = #imageLiteral(resourceName: "send2")
-        button.setImage(image, for: .normal)
+        button.setImage(#imageLiteral(resourceName: "send2"), for: .normal)
         button.tintColor = .black
         
         return button
