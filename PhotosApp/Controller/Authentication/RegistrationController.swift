@@ -13,6 +13,16 @@ class RegistrationController: UIViewController {
     
     private var viewModel = RegistrationViewModel()
     
+    lazy var addPhotoButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(handleProfilePhotoSelect), for: .touchUpInside)
+        
+        return button
+    }()
+    
     private let emailTextField: UITextField = {
         let textField = CustomTextField(placeholder: "Email")
         textField.keyboardType = .emailAddress
@@ -32,15 +42,6 @@ class RegistrationController: UIViewController {
         let button = UIButton(type: .system)
         
         button.setupAuthenticationButton(title: "Sign Up")
-        
-        return button
-    }()
-    
-    let addPhotoButton: UIButton = {
-        let button = UIButton(type: .system)
-        
-        button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
-        button.tintColor = .white
         
         return button
     }()
@@ -83,6 +84,13 @@ class RegistrationController: UIViewController {
         updateForm()
     }
     
+    @objc func handleProfilePhotoSelect() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
+    }
+    
     // MARK: - Helpers
     
     func configureUI() {
@@ -115,10 +123,20 @@ class RegistrationController: UIViewController {
     }
 }
 
+// MARK: - FormViewModel
+
 extension RegistrationController: FormViewModel {
     func updateForm() {
         signUpButton.backgroundColor = viewModel.buttonBackgroundColor
         signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
         signUpButton.isEnabled = viewModel.formIsValid
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print(3)
     }
 }
