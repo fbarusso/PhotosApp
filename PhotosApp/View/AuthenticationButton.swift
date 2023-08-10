@@ -8,13 +8,18 @@
 import UIKit
 
 class AuthenticationButton: UIView {
+    
+    // MARK: - Properties
+    
     var isValid: Bool = false {
         didSet {
             configureValidState()
         }
     }
     
-    var button = UIButton(type: .system)
+    lazy var button = UIButton(type: .system)
+    
+     // MARK: - Lifecycle
     
     init(title: String) {
         super.init(frame: .zero)
@@ -23,10 +28,10 @@ class AuthenticationButton: UIView {
         button.fillSuperview()
         
         button.setTitle(title, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1).withAlphaComponent(0.5)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.layer.cornerRadius = 5
         button.setHeight(50)
+        
         configureValidState()
     }
     
