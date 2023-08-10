@@ -38,13 +38,7 @@ class RegistrationController: UIViewController {
     private let fullNameTextField = CustomTextField(placeholder: "Full name")
     private let usernameTextField = CustomTextField(placeholder: "Username")
     
-    private let signUpButton: UIButton = {
-        let button = UIButton(type: .system)
-        
-        button.setupAuthenticationButton(title: "Sign Up")
-        
-        return button
-    }()
+    private let signUpButton = AuthenticationButton(title: "Log In")
     
     private lazy var alreadyHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
@@ -127,9 +121,7 @@ class RegistrationController: UIViewController {
 
 extension RegistrationController: FormViewModel {
     func updateForm() {
-        signUpButton.backgroundColor = viewModel.buttonBackgroundColor
-        signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
-        signUpButton.isEnabled = viewModel.formIsValid
+        signUpButton.isValid = viewModel.formIsValid
     }
 }
 

@@ -37,13 +37,7 @@ class LoginController: UIViewController {
         return textField
     }()
     
-    private let loginButton: UIButton = {
-        let button = UIButton(type: .system)
-        
-        button.setupAuthenticationButton(title: "Log In")
-        
-        return button
-    }()
+    private let loginButton = AuthenticationButton(title: "Log In")
     
     private let forgotPasswordButton: UIButton = {
         let button = UIButton(type: .system)
@@ -122,8 +116,6 @@ class LoginController: UIViewController {
 
 extension LoginController: FormViewModel {
     func updateForm() {
-        loginButton.backgroundColor = viewModel.buttonBackgroundColor
-        loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
-        loginButton.isEnabled = viewModel.formIsValid
+        loginButton.isValid = viewModel.formIsValid
     }
 }
