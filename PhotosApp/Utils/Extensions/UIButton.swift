@@ -17,4 +17,14 @@ extension UIButton {
         
         setAttributedTitle(attributedTitle, for: .normal)
     }
+    
+    func setupAuthenticationButton(title: String) {
+        setTitle(title, for: .normal)
+        isEnabled = false
+        backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1).withAlphaComponent(0.5)
+        setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.67), for: .normal)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        layer.cornerRadius = 5
+        setHeight(50)
+    }
 }
