@@ -12,6 +12,11 @@ class RegistrationController: UIViewController {
     // MARK: - Properties
     
     private var viewModel = RegistrationViewModel()
+    private var profileImage: UIImage? {
+        didSet {
+            didSetProfileImage()
+        }
+    }
     
     lazy var addPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -56,9 +61,26 @@ class RegistrationController: UIViewController {
         
         configureUI()
         configureNotificationsObservers()
+        configureSignUpButton()
     }
     
     // MARK: - Actions
+    
+    @objc func didTapSignUpButton() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullName = fullNameTextField.text else { return }
+        guard let username = usernameTextField.text else { return }
+        guard let profileImage = profileImage else { return }
+        
+        AuthService.registerUser(AuthCredentials(
+            email: email,
+            password: password,
+            fullName: fullName,
+            username: username,
+            profileImage: profileImage
+        ))
+    }
     
     @objc func didTapAlreadyHaveAccountButton() {
         navigationController?.popViewController(animated: true)
@@ -113,7 +135,19 @@ class RegistrationController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         fullNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        
+    }
+    
+    func configureSignUpButton() {
+        signUpButton.button.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
+    }
+    
+    func didSetProfileImage() {
+        guard let profileImage = profileImage else { return }
+        addPhotoButton.setImage(profileImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        addPhotoButton.layer.cornerRadius = addPhotoButton.frame.width / 2
+        addPhotoButton.layer.masksToBounds = true
+        addPhotoButton.layer.borderWidth = 2
+        addPhotoButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
 }
 
@@ -130,12 +164,8 @@ extension RegistrationController: FormViewModel {
 extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.editedImage] as? UIImage else { return }
-        addPhotoButton.setImage(selectedImage.withRenderingMode(.alwaysOriginal), for: .normal)
-        
-        addPhotoButton.layer.cornerRadius = addPhotoButton.frame.width / 2
-        addPhotoButton.layer.masksToBounds = true
-        addPhotoButton.layer.borderWidth = 2
-        addPhotoButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+
+        profileImage = selectedImage
         
         self.dismiss(animated: true)
     }
