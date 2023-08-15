@@ -73,13 +73,21 @@ class RegistrationController: UIViewController {
         guard let username = usernameTextField.text else { return }
         guard let profileImage = profileImage else { return }
         
-        AuthService.registerUser(AuthCredentials(
+        let credentials = AuthCredentials(
             email: email,
             password: password,
             fullName: fullName,
             username: username,
             profileImage: profileImage
-        ))
+        )
+        
+        AuthService.registerUser(withCredential: credentials) { error in
+            if let error = error {
+                print("DEBUG: Error signing user up: \(error.localizedDescription)")
+            } else {
+                self.dismiss(animated: true)
+            }
+        }
     }
     
     @objc func didTapAlreadyHaveAccountButton() {
