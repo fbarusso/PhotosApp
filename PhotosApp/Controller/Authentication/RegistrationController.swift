@@ -38,7 +38,7 @@ class RegistrationController: UIViewController {
     private let fullNameTextField = CustomTextField(placeholder: "Full name")
     private let usernameTextField = CustomTextField(placeholder: "Username")
     
-    private let signUpButton = AuthenticationButton(title: "Log In")
+    private let signUpButton = AuthenticationButton(title: "Sign In")
     
     private lazy var alreadyHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
@@ -129,6 +129,14 @@ extension RegistrationController: FormViewModel {
 
 extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        print(3)
+        guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        addPhotoButton.setImage(selectedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        addPhotoButton.layer.cornerRadius = addPhotoButton.frame.width / 2
+        addPhotoButton.layer.masksToBounds = true
+        addPhotoButton.layer.borderWidth = 2
+        addPhotoButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        self.dismiss(animated: true)
     }
 }
